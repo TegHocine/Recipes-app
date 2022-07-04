@@ -28,14 +28,14 @@ const Veggie = () => {
   return (
     <div>
       <div className='my-14'>
-        <h3>Our Vegetarian Picks</h3>
+        <h3 className='my-4 text-lg font-semibold'>Our Vegetarian Picks</h3>
         <Splide
           options={{
             perPage: 3,
             arrows: false,
             pagination: false,
             drag: 'free',
-            gap: '5rem'
+            gap: '2.5rem'
           }}>
           {veggie?.map((recipe, i) => (
             <SplideSlide key={i}>

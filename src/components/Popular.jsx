@@ -28,14 +28,14 @@ const Popular = () => {
   return (
     <div>
       <div className='my-14'>
-        <h3>Popular Picks</h3>
+        <h3 className='my-4 text-lg font-semibold'>Popular Picks</h3>
         <Splide
           options={{
             perPage: 4,
             arrows: false,
             pagination: false,
             drag: 'free',
-            gap: '5rem'
+            gap: '2rem'
           }}>
           {popular?.map((recipe, i) => (
             <SplideSlide key={i}>

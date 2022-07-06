@@ -4,6 +4,7 @@ import instance from '../axios/axiosInstance'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
+import { Link } from 'react-router-dom'
 
 const Popular = () => {
   const [popular, setPopular] = useState(null)
@@ -39,17 +40,18 @@ const Popular = () => {
           }}>
           {popular?.map((recipe, i) => (
             <SplideSlide key={i}>
-              <div className='min-h-[15rem] relative rounded-3xl overflow-hidden'>
-                <p className='my-4 absolute bottom-0 w-full z-10 text-base font-semibold text-center text-white '>
-                  {recipe.title}
-                </p>
+              <Link
+                to={`/recipe/${recipe.id}`}
+                className='min-h-[15rem] relative rounded-3xl overflow-hidden'>
                 <img
                   src={recipe.image}
                   alt={recipe.title}
-                  className='rounded-3xl object-cover w-full h-full absolute left-0'
+                  className='rounded-3xl object-cover w-full h-auto border border-gray-300'
                 />
-                <div className='absolute left-0 top-0 w-full h-full bg-black/[0.3]'></div>
-              </div>
+                <p className='my-2 w-full text-base font-semibold text-center text-gray-900 '>
+                  {recipe.title}
+                </p>
+              </Link>
             </SplideSlide>
           ))}
         </Splide>
